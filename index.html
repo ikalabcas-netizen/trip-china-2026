@@ -70,6 +70,17 @@
   .day ul{margin:10px 0 0;padding-left:20px}
   .day li{margin:7px 0;font-size:15px}
 
+  /* DAY IMAGES */
+  .dayimgs{display:grid;gap:10px;margin:6px 0 4px}
+  .dayimgs.two{grid-template-columns:1fr 1fr}
+  .dayimg{position:relative;margin:0;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);background:#eee}
+  .dayimg img{width:100%;height:200px;object-fit:cover;display:block;transition:transform .4s}
+  .dayimg:hover img{transform:scale(1.04)}
+  .dayimg figcaption{position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:12.5px;font-weight:600;
+    padding:22px 12px 9px;letter-spacing:.2px}
+  @media(max-width:600px){.dayimgs.two{grid-template-columns:1fr}.dayimg img{height:180px}}
+
   /* TAGS */
   .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;
     background:var(--gold-soft);color:var(--red-dark);margin-right:5px;white-space:nowrap}
@@ -229,6 +240,10 @@
       <div class="chev">›</div>
     </summary>
     <div class="body">
+      <div class="dayimgs two">
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/20200110_Tiananmen-3.jpg/1280px-20200110_Tiananmen-3.jpg" alt="Quảng trường Thiên An Môn" loading="lazy" referrerpolicy="no-referrer"><figcaption>Thiên An Môn (Tiananmen)</figcaption></figure>
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Forbidden_City_Beijing_Shenwumen_Gate.JPG/1280px-Forbidden_City_Beijing_Shenwumen_Gate.JPG" alt="Tử Cấm Thành" loading="lazy" referrerpolicy="no-referrer"><figcaption>Tử Cấm Thành (Cố Cung)</figcaption></figure>
+      </div>
       <ul>
         <li><span class="tag">Sáng</span>Quảng trường <b>Thiên An Môn</b> → <b>Tử Cấm Thành (Cố Cung)</b> — đặt vé online trước tại <em>gugong.dpm.org.cn</em>, mất ~3–4h. <span class="muted">(Mở cửa Thứ 7 ✅; đóng cửa Thứ 2 nên không ảnh hưởng)</span></li>
         <li><span class="tag">Chiều</span><b>Công viên Cảnh Sơn</b> — leo lên ngắm toàn cảnh Cố Cung từ trên cao (15 phút leo). Sau đó dạo khu phố cổ <b>Nam La Cổ Hạng (Nanluoguxiang)</b>.</li>
@@ -249,6 +264,10 @@
       <div class="chev">›</div>
     </summary>
     <div class="body">
+      <div class="dayimgs two">
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Temple_of_Heaven%2C_Beijing_02.JPG" alt="Thiên Đàn" loading="lazy" referrerpolicy="no-referrer"><figcaption>Thiên Đàn (Temple of Heaven)</figcaption></figure>
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Summer_Palace%2C_Beijing_01.JPG/1280px-Summer_Palace%2C_Beijing_01.JPG" alt="Di Hòa Viên" loading="lazy" referrerpolicy="no-referrer"><figcaption>Di Hòa Viên (Summer Palace)</figcaption></figure>
+      </div>
       <ul>
         <li><span class="tag">Sáng</span><b>Thiên Đàn (Temple of Heaven)</b> — nơi vua tế trời, công viên rộng thoáng, đường bằng phẳng phù hợp ba mẹ, mất ~2–3h.</li>
         <li><span class="tag">Chiều</span><b>Di Hòa Viên (Summer Palace)</b> — cung điện mùa hè bên hồ Côn Minh, đi thuyền rồng ngắm cảnh (~3h). <span class="muted">Hoặc thay bằng Bắc Hải / Hutong nếu ba mẹ mệt.</span></li>
@@ -270,6 +289,9 @@
       <div class="chev">›</div>
     </summary>
     <div class="body">
+      <div class="dayimgs">
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Huangyaguan_08_%284921027669%29.jpg/1280px-Huangyaguan_08_%284921027669%29.jpg" alt="Trường Thành Hoàng Nhai Quan" loading="lazy" referrerpolicy="no-referrer"><figcaption>Vạn Lý Trường Thành — Hoàng Nhai Quan (Huangyaguan), huyện Kế, Thiên Tân</figcaption></figure>
+      </div>
       <ul class="timeline">
         <li><span class="ttime">05:30</span><span class="tact">Dậy, trả phòng khách sạn Bắc Kinh, taxi ra ga <b>Bắc Kinh Nam</b>.</span></li>
         <li><span class="ttime">~07:00</span><span class="tact">Tàu C/G <b>Bắc Kinh Nam → Thiên Tân</b> (~30–35 phút). Xe riêng đón tại ga Thiên Tân.</span></li>
@@ -296,6 +318,10 @@
       <div class="chev">›</div>
     </summary>
     <div class="body">
+      <div class="dayimgs two">
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Bund_2.jpg/1280px-The_Bund_2.jpg" alt="Bến Thượng Hải" loading="lazy" referrerpolicy="no-referrer"><figcaption>Bến Thượng Hải (The Bund)</figcaption></figure>
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Pudong_Shanghai_November_2017_panorama.jpg/1280px-Pudong_Shanghai_November_2017_panorama.jpg" alt="Lục Gia Chủy Phố Đông" loading="lazy" referrerpolicy="no-referrer"><figcaption>Skyline Lục Gia Chủy (Phố Đông) — Tháp Thượng Hải</figcaption></figure>
+      </div>
       <ul>
         <li><span class="tag move">~06:30</span>Taxi ra ga <b>Thiên Tân Nam (Tianjinnan)</b> — cách trung tâm ~30–40 phút.</li>
         <li><span class="tag move">~07:30–08:00</span>Tàu cao tốc G <b>Thiên Tân Nam → Thượng Hải Hồng Kiều</b> (~4–4,5 giờ). Chuyến nhanh nhất xuất phát từ ~06:27; nên chọn chuyến ~07:30 để không dậy quá sớm sau ngày dài hôm trước.</li>
@@ -319,6 +345,10 @@
       <div class="chev">›</div>
     </summary>
     <div class="body">
+      <div class="dayimgs two">
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Shanghai_-_Yu_Garden_-_0035.jpg/1280px-Shanghai_-_Yu_Garden_-_0035.jpg" alt="Dự Viên" loading="lazy" referrerpolicy="no-referrer"><figcaption>Dự Viên (Yu Garden) &amp; Thành Hoàng Miếu</figcaption></figure>
+        <figure class="dayimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/A_maglev_train_coming_out%2C_Pudong_International_Airport%2C_Shanghai.jpg/1280px-A_maglev_train_coming_out%2C_Pudong_International_Airport%2C_Shanghai.jpg" alt="Tàu đệm từ Maglev Thượng Hải" loading="lazy" referrerpolicy="no-referrer"><figcaption>Tàu đệm từ Maglev → sân bay Phố Đông (PVG)</figcaption></figure>
+      </div>
       <ul>
         <li><span class="tag">Sáng</span><b>Dự Viên (Yu Garden)</b> &amp; chợ cổ <b>Thành Hoàng Miếu</b> — kiến trúc Giang Nam, ăn <b>tiểu long bao</b> (xiaolongbao) ngay tại chỗ.</li>
         <li><span class="tag">Trưa</span>Khu nghệ thuật <b>Điền Tử Phường (Tianzifang)</b> hoặc lên đài quan sát <b>Tháp Thượng Hải</b> (cao nhất TQ). Chọn 1 trong 2 để có thời gian thoải mái.</li>
