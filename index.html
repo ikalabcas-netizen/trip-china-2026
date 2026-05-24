@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tour Trung Quốc 19–24/06/2026 · Bắc Kinh – Thiên Tân – Thượng Hải</title>
+<meta name="description" content="Lịch trình chi tiết 6 ngày: Nghệ An → Hà Nội → Bắc Kinh (2 ngày) → Nhà máy Yilink + Vạn Lý Trường Thành (Thiên Tân, Thứ Hai) → Thượng Hải → TP.HCM, 19–24/06/2026.">
+<style>
+  :root{
+    --red:#b91c1c; --red-dark:#7f1212; --gold:#d4a017; --gold-soft:#f5e6c8;
+    --ink:#1f2430; --muted:#5b6472; --line:#e7e3da; --bg:#faf7f1; --card:#ffffff;
+    --green:#15803d; --blue:#1d4ed8; --orange:#c2410c;
+    --shadow:0 4px 16px rgba(31,36,48,.08);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px}
+  a{color:var(--red)}
+  h1,h2,h3{line-height:1.25;margin:0 0 .4em}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#7f1212 0%,#b91c1c 55%,#c2410c 100%);
+    color:#fff;padding:64px 20px 72px;text-align:center;position:relative;overflow:hidden}
+  .hero::after{content:"长城·故宫·外滩";position:absolute;right:-10px;bottom:-26px;
+    font-size:110px;font-weight:800;color:rgba(255,255,255,.06);white-space:nowrap;letter-spacing:6px}
+  .hero .kicker{letter-spacing:3px;text-transform:uppercase;font-size:13px;opacity:.85;margin-bottom:10px}
+  .hero h1{font-size:clamp(28px,5vw,46px);margin-bottom:.25em;text-shadow:0 2px 12px rgba(0,0,0,.2)}
+  .hero .route{font-size:clamp(14px,2.4vw,19px);font-weight:600;opacity:.97;max-width:920px;margin:0 auto}
+  .hero .dates{display:inline-block;margin-top:18px;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);padding:8px 22px;border-radius:999px;font-weight:700;backdrop-filter:blur(4px)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(250,247,241,.93);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  nav .wrap{max-width:1080px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:10px 12px;scrollbar-width:none}
+  nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:13.5px;white-space:nowrap;
+    padding:7px 13px;border-radius:999px;transition:background .15s}
+  nav a:hover{background:var(--gold-soft);color:var(--red-dark)}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:46px 0;border-bottom:1px solid var(--line)}
+  section>.wrap>h2{font-size:clamp(21px,3.2vw,29px);color:var(--red-dark);display:flex;align-items:center;gap:10px}
+  .lead{color:var(--muted);max-width:780px;margin:.2em 0 0}
+
+  /* QUICK FACTS */
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:13px;margin-top:14px}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:17px;box-shadow:var(--shadow)}
+  .fact .n{font-size:26px;font-weight:800;color:var(--red)}
+  .fact .l{font-size:13px;color:var(--muted);margin-top:2px}
+
+  /* DAY CARDS */
+  .day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin:16px 0;overflow:hidden}
+  .day summary{list-style:none;display:flex;align-items:center;gap:14px;padding:16px 20px;
+    background:linear-gradient(90deg,#fff 0%,#fdf6ea 100%);border-bottom:1px solid var(--line);cursor:pointer}
+  .day summary::-webkit-details-marker{display:none}
+  .day .badge{flex:0 0 auto;width:54px;height:54px;border-radius:12px;background:var(--red);color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1.1}
+  .day .badge small{font-size:10px;font-weight:600;opacity:.85}
+  .day .badge b{font-size:21px}
+  .day.hl .badge{background:linear-gradient(135deg,#b45309,#d4a017)}
+  .day .head-text{flex:1}
+  .day .head-text h3{margin:0;font-size:16.5px}
+  .day .head-text .sub{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .day .chev{color:var(--gold);font-size:20px;font-weight:800;transition:transform .2s;flex-shrink:0}
+  details.day[open] .chev{transform:rotate(90deg)}
+  .day .body{padding:8px 20px 20px}
+  .day ul{margin:10px 0 0;padding-left:20px}
+  .day li{margin:7px 0;font-size:15px}
+
+  /* TAGS */
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;
+    background:var(--gold-soft);color:var(--red-dark);margin-right:5px;white-space:nowrap}
+  .tag.move{background:#dbeafe;color:#1e3a8a}
+  .tag.eat{background:#dcfce7;color:#166534}
+  .tag.stay{background:#fae8ff;color:#86198f}
+  .tag.biz{background:#fee2e2;color:#991b1b}
+  .tag.time{background:#f1f5f9;color:#334155;font-family:monospace}
+
+  /* TIMELINE (combo day) */
+  .timeline{margin:12px 0 0;padding:0;list-style:none}
+  .timeline li{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14.5px;align-items:flex-start}
+  .timeline li:last-child{border-bottom:none}
+  .ttime{flex:0 0 68px;font-weight:700;font-family:monospace;font-size:13.5px;color:var(--red-dark);padding-top:1px}
+  .tact{flex:1}
+  .tact b{color:var(--ink)}
+
+  /* BOXES */
+  .box{border-radius:var(--radius);padding:17px 20px;margin:14px 0;border-left:5px solid}
+  .box.info{background:#eff6ff;border-color:var(--blue)}
+  .box.warn{background:#fffbeb;border-color:var(--gold)}
+  .box.ok{background:#f0fdf4;border-color:var(--green)}
+  .box.factory{background:linear-gradient(135deg,#fff7ed,#fef2f2);border-color:var(--red)}
+  .box h3{margin-top:0;font-size:16px}
+  .box p{margin:.4em 0}
+
+  /* TABLES */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);background:var(--card);margin:12px 0}
+  table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{background:var(--red);color:#fff;font-weight:700}
+  tbody tr:nth-child(even){background:#fbf8f2}
+  td.num,th.num{text-align:right;white-space:nowrap}
+  tfoot td{font-weight:800;background:var(--gold-soft);border-top:2px solid var(--gold)}
+
+  /* CARDS GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:15px;margin-top:10px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:19px;box-shadow:var(--shadow)}
+  .card h3{color:var(--red-dark);font-size:16px;margin-top:0}
+  .card .price{font-size:21px;font-weight:800;color:var(--red);margin:4px 0}
+  .card ul{padding-left:18px;margin:8px 0 0}
+  .card li{margin:5px 0;font-size:14.5px}
+
+  /* CHECKLIST */
+  .check{list-style:none;padding:0;margin:10px 0 0}
+  .check li{padding:8px 0 8px 34px;position:relative;border-bottom:1px dashed var(--line);font-size:15px}
+  .check li::before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:6px;
+    background:var(--green);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .pill.best{background:#dcfce7;color:#166534}
+  .pill.alt{background:#e0e7ff;color:#3730a3}
+  .muted{color:var(--muted)}
+
+  footer{background:var(--ink);color:#cdd3dd;padding:32px 20px;font-size:13.5px}
+  footer .wrap{display:flex;flex-direction:column;gap:7px}
+  footer a{color:#fca5a5}
+  .src{font-size:12px;color:#8b93a1}
+
+  @media(max-width:600px){
+    .hero{padding:44px 16px 52px}
+    section{padding:32px 0}
+    .day summary,.day .body{padding-left:14px;padding-right:14px}
+    .ttime{flex:0 0 56px;font-size:12.5px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="kicker">Lịch trình du lịch gia đình · 6 ngày 5 đêm</div>
+  <h1>Tour Trung Quốc 2026</h1>
+  <div class="route">
+    Nghệ An → Hà Nội → ✈ Bắc Kinh (2 ngày) →
+    🏭 Nhà máy Yilink + 🧱 Vạn Lý Trường Thành (Thiên Tân · Thứ Hai) →
+    🚄 Thượng Hải → ✈ TP. Hồ Chí Minh
+  </div>
+  <div class="dates">📅 19 – 24 / 06 / 2026 &nbsp;·&nbsp; 3 người (bạn + ba &amp; mẹ)</div>
+</header>
+
+<!-- NAV -->
+<nav><div class="wrap">
+  <a href="#tongquan">Tổng quan</a>
+  <a href="#lichtrinh">Lịch trình 6 ngày</a>
+  <a href="#bay">Vé máy bay</a>
+  <a href="#tau">Tàu cao tốc</a>
+  <a href="#yilink">Yilink &amp; Trường Thành</a>
+  <a href="#visa">Visa</a>
+  <a href="#chiphi">Chi phí</a>
+  <a href="#meo">Lưu ý &amp; mẹo</a>
+</div></nav>
+
+<!-- TỔNG QUAN -->
+<section id="tongquan"><div class="wrap">
+  <h2>🧭 Tổng quan chuyến đi</h2>
+  <p class="lead">Bay đêm 19/6, đặt chân Bắc Kinh 2 ngày cuối tuần (20–21/6), sáng sớm thứ Hai 22/6 đi thẳng Thiên Tân thăm nhà máy Yilink + leo Vạn Lý Trường Thành + tiệc tối Mr. Andy, rồi tàu cao tốc sang Thượng Hải, bay về TP.HCM tối 24/6.</p>
+
+  <div class="facts">
+    <div class="fact"><div class="n">6</div><div class="l">ngày / 5 đêm khách sạn</div></div>
+    <div class="fact"><div class="n">3</div><div class="l">thành phố: Bắc Kinh · Thiên Tân · Thượng Hải</div></div>
+    <div class="fact"><div class="n">2</div><div class="l">chặng bay quốc tế (open-jaw)</div></div>
+    <div class="fact"><div class="n">~31<span style="font-size:14px">tr</span></div><div class="l">VNĐ / người (ước tính)</div></div>
+    <div class="fact"><div class="n">T.2</div><div class="l">22/6 = Thứ Hai — factory ngày làm việc ✅</div></div>
+  </div>
+
+  <div class="box info" style="margin-top:18px">
+    <h3>🗺️ Logic lộ trình</h3>
+    <p>Nhà máy Yilink ở <b>phía Nam Thiên Tân</b>, đoạn Trường Thành <b>Hoàng Nhai Quan (Huangyaguan)</b> nằm ngay trong địa phận Thiên Tân (huyện Kế) — đây là lý do chọn thay vì Mutianyu gần Bắc Kinh (ngược hướng, không thể gộp trong 1 ngày). Ngủ đủ 2 đêm Bắc Kinh (20–21/6), sáng thứ Hai 22/6 mới check-out và đi Thiên Tân bằng tàu cao tốc 30 phút. Hôm sau đi tàu thẳng <b>Thiên Tân → Thượng Hải</b> (~4h) mà không cần quay lại Bắc Kinh.</p>
+  </div>
+
+  <div class="box warn">
+    <h3>📋 Cần xác nhận &amp; đặt sớm</h3>
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li>✈️ Kiểm tra chuyến bay thẳng tối Thứ 6, <b>19/6</b> (VJ/VN/CZ) — đặt ngay khi xác nhận lịch</li>
+      <li>🏭 Liên hệ Mr. Andy xác nhận lịch hẹn nhà máy <b>sáng Thứ Hai 22/6</b>, khoảng 08:00–10:30</li>
+      <li>🚗 Đặt xe riêng + tài xế trọn ngày <b>22/6</b> tại Thiên Tân (nhà máy → Hoàng Nhai Quan → tiệc tối)</li>
+      <li>🚄 Đặt vé tàu G <b>Thiên Tân Nam → Thượng Hải Hồng Kiều</b> ngày 23/6, chuyến ~07:30</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- LỊCH TRÌNH -->
+<section id="lichtrinh"><div class="wrap">
+  <h2>🗓️ Lịch trình 6 ngày</h2>
+  <p class="lead">Bấm mở từng ngày để xem chi tiết. Khung giờ là gợi ý, điều chỉnh theo giờ bay &amp; lịch hẹn thực tế.</p>
+
+  <!-- NGÀY 1 -->
+  <details class="day" open>
+    <summary>
+      <div class="badge"><small>T.6</small><b>19</b></div>
+      <div class="head-text">
+        <h3>Ngày 1 · Nghệ An → Hà Nội → Bay đêm Bắc Kinh</h3>
+        <div class="sub">Khởi hành — nhập cảnh khuya</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul>
+        <li><span class="tag move">Sáng</span>Vinh (Nghệ An) → Hà Nội: xe limousine ~5–6h <em>hoặc</em> bay Vinh (VII) → Nội Bài (HAN) ~1h cho nhanh, sau đó nghỉ ngơi / ăn trưa tại Hà Nội.</li>
+        <li><span class="tag move">~18:00</span>Ra sân bay Nội Bài, check-in quốc tế.</li>
+        <li><span class="tag move">Bay ~20:00–21:00</span>✈️ <b>Hà Nội (HAN) → Bắc Kinh (PEK/PKX)</b> bay thẳng ~3h25. Lưu ý: bay vào sân bay nào (PEK Thủ Đô hay PKX Đại Hưng) để book khách sạn phù hợp.</li>
+        <li><span class="tag">~23:30–00:00 (giờ TQ)</span>Đến Bắc Kinh, nhập cảnh, taxi/tàu điện sân bay về khách sạn. <b>Đặt phòng từ đêm 19/6</b> để chắc suất khi về khuya.</li>
+        <li><span class="tag stay">Nghỉ</span>Khách sạn Bắc Kinh — khu trung tâm (Đông Thành / Tiền Môn) gần ga metro thuận tiện.</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- NGÀY 2 -->
+  <details class="day">
+    <summary>
+      <div class="badge"><small>T.7</small><b>20</b></div>
+      <div class="head-text">
+        <h3>Ngày 2 · Bắc Kinh (1) — Trung tâm lịch sử</h3>
+        <div class="sub">Thiên An Môn · Tử Cấm Thành · Cảnh Sơn · Vương Phủ Tỉnh</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul>
+        <li><span class="tag">Sáng</span>Quảng trường <b>Thiên An Môn</b> → <b>Tử Cấm Thành (Cố Cung)</b> — đặt vé online trước tại <em>gugong.dpm.org.cn</em>, mất ~3–4h. <span class="muted">(Mở cửa Thứ 7 ✅; đóng cửa Thứ 2 nên không ảnh hưởng)</span></li>
+        <li><span class="tag">Chiều</span><b>Công viên Cảnh Sơn</b> — leo lên ngắm toàn cảnh Cố Cung từ trên cao (15 phút leo). Sau đó dạo khu phố cổ <b>Nam La Cổ Hạng (Nanluoguxiang)</b>.</li>
+        <li><span class="tag eat">Tối</span>Vịt quay Bắc Kinh (nhà hàng Quanjude hoặc Da Dong) + dạo phố đèn <b>Vương Phủ Tỉnh (Wangfujing)</b>.</li>
+        <li><span class="tag stay">Nghỉ</span>Khách sạn Bắc Kinh (đêm 2).</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- NGÀY 3 -->
+  <details class="day">
+    <summary>
+      <div class="badge"><small>CN</small><b>21</b></div>
+      <div class="head-text">
+        <h3>Ngày 3 · Bắc Kinh (2) — Đền đài &amp; vườn ngự uyển</h3>
+        <div class="sub">Thiên Đàn · Di Hòa Viên · nghỉ ngơi chuẩn bị</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul>
+        <li><span class="tag">Sáng</span><b>Thiên Đàn (Temple of Heaven)</b> — nơi vua tế trời, công viên rộng thoáng, đường bằng phẳng phù hợp ba mẹ, mất ~2–3h.</li>
+        <li><span class="tag">Chiều</span><b>Di Hòa Viên (Summer Palace)</b> — cung điện mùa hè bên hồ Côn Minh, đi thuyền rồng ngắm cảnh (~3h). <span class="muted">Hoặc thay bằng Bắc Hải / Hutong nếu ba mẹ mệt.</span></li>
+        <li><span class="tag eat">Tối</span>Ăn tối nhẹ gần khách sạn, <b>đóng gói toàn bộ hành lý</b> cho sáng sớm hôm sau. Book taxi/Didi đến ga Bắc Kinh Nam từ tối nay.</li>
+        <li><span class="tag stay">Nghỉ</span>Khách sạn Bắc Kinh (đêm 3) — ngủ sớm, dậy 05:30 sáng mai.</li>
+      </ul>
+      <div class="box warn" style="margin-bottom:0">💡 Ga <b>Bắc Kinh Nam (Beijing South)</b> cách trung tâm ~35 phút taxi buổi sáng sớm. Book xe từ tối 21/6 để chủ động, tránh chờ đợi lúc 05:30.</div>
+    </div>
+  </details>
+
+  <!-- NGÀY 4 — COMBO -->
+  <details class="day hl">
+    <summary>
+      <div class="badge"><small>T.2</small><b>22</b></div>
+      <div class="head-text">
+        <h3>Ngày 4 ⭐ · Thiên Tân — Nhà máy + Trường Thành + tiệc tối Mr. Andy</h3>
+        <div class="sub">Ngày "combo" — thuê xe riêng trọn ngày · Thứ Hai ✅</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul class="timeline">
+        <li><span class="ttime">05:30</span><span class="tact">Dậy, trả phòng khách sạn Bắc Kinh, taxi ra ga <b>Bắc Kinh Nam</b>.</span></li>
+        <li><span class="ttime">~07:00</span><span class="tact">Tàu C/G <b>Bắc Kinh Nam → Thiên Tân</b> (~30–35 phút). Xe riêng đón tại ga Thiên Tân.</span></li>
+        <li><span class="ttime">08:00–10:30</span><span class="tact">🏭 <b>Tham quan nhà máy Yilink</b> (quận Tân Nam/Jinnan) — dây chuyền máy phay CAD/CAM, vật liệu zirconia nha khoa. <em>Thứ Hai = ngày làm việc, nhà máy hoạt động bình thường.</em></span></li>
+        <li><span class="ttime">10:30</span><span class="tact">Xe xuất phát đến <b>Hoàng Nhai Quan (Huangyaguan)</b> — ~150 km, ~2,5 giờ.</span></li>
+        <li><span class="ttime">13:00–14:00</span><span class="tact">🍜 Ăn trưa tại nhà hàng chân núi huyện Kế.</span></li>
+        <li><span class="ttime">14:00–16:00</span><span class="tact">🧱 <b>Leo Vạn Lý Trường Thành — Hoàng Nhai Quan</b>: đoạn thành 3,3 km, cổng quan ải cổ, vắng khách, cảnh núi hùng vĩ. Phù hợp ba mẹ nếu không leo cao quá.</span></li>
+        <li><span class="ttime">16:00</span><span class="tact">Xe về trung tâm Thiên Tân (~2–2,5 giờ). Ghé khách sạn nhận phòng, tắm rửa nghỉ ngơi.</span></li>
+        <li><span class="ttime">19:00</span><span class="tact">🍽️ <b>Tiệc tối với Mr. Andy</b> — giám đốc Yilink, tại nhà hàng ven <b>sông Hải Hà</b>, Thiên Tân.</span></li>
+        <li><span class="ttime">Tối</span><span class="tact"><span class="tag stay">Nghỉ</span>Khách sạn Thiên Tân (đêm 4) — chọn nơi gần ga metro số 3 (thuận tiện cho 06:30 sáng hôm sau).</span></li>
+      </ul>
+      <div class="box warn" style="margin-top:14px;margin-bottom:0">🚗 <b>Thuê xe riêng + tài xế trọn ngày</b> (~1.200–1.800 CNY cả nhóm cho xe 5–7 chỗ). Huangyaguan cách xa, phương tiện công cộng thưa — xe riêng linh hoạt giờ nhà máy &amp; tiệc tối, đồng thời chở hành lý từ Bắc Kinh.</div>
+    </div>
+  </details>
+
+  <!-- NGÀY 5 -->
+  <details class="day">
+    <summary>
+      <div class="badge"><small>T.3</small><b>23</b></div>
+      <div class="head-text">
+        <h3>Ngày 5 · Thiên Tân → Thượng Hải + Bến Thượng Hải</h3>
+        <div class="sub">Tàu cao tốc sáng sớm ~4h · The Bund · Nam Kinh Lộ</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul>
+        <li><span class="tag move">~06:30</span>Taxi ra ga <b>Thiên Tân Nam (Tianjinnan)</b> — cách trung tâm ~30–40 phút.</li>
+        <li><span class="tag move">~07:30–08:00</span>Tàu cao tốc G <b>Thiên Tân Nam → Thượng Hải Hồng Kiều</b> (~4–4,5 giờ). Chuyến nhanh nhất xuất phát từ ~06:27; nên chọn chuyến ~07:30 để không dậy quá sớm sau ngày dài hôm trước.</li>
+        <li><span class="tag">~12:00–13:00</span>Đến Thượng Hải, metro/taxi về khách sạn khu <b>Bến Thượng Hải / Nam Kinh Lộ</b>, nhận phòng.</li>
+        <li><span class="tag">Chiều</span>Nghỉ ngơi, ăn trưa. Dạo <b>The Bund (Ngoại Tan)</b> — ngắm kiến trúc cổ điển và skyline Lục Gia Chủy bên kia sông.</li>
+        <li><span class="tag">Tối</span>Phố đi bộ <b>Nam Kinh Lộ</b>, ăn tối thưởng thức ẩm thực Thượng Hải.</li>
+        <li><span class="tag stay">Nghỉ</span>Khách sạn Thượng Hải (đêm 5).</li>
+      </ul>
+      <div class="box info" style="margin-bottom:0">💡 Đặt vé tàu Thiên Tân–Thượng Hải trước <b>1–2 tuần</b> qua Trip.com hoặc 12306 để chọn giờ &amp; chỗ ngồi cạnh nhau (ghế hạng 2 đủ thoải mái).</div>
+    </div>
+  </details>
+
+  <!-- NGÀY 6 -->
+  <details class="day">
+    <summary>
+      <div class="badge"><small>T.4</small><b>24</b></div>
+      <div class="head-text">
+        <h3>Ngày 6 · Thượng Hải → Bay về TP.HCM</h3>
+        <div class="sub">Dự Viên · Tianzifang · Maglev · PVG → SGN</div>
+      </div>
+      <div class="chev">›</div>
+    </summary>
+    <div class="body">
+      <ul>
+        <li><span class="tag">Sáng</span><b>Dự Viên (Yu Garden)</b> &amp; chợ cổ <b>Thành Hoàng Miếu</b> — kiến trúc Giang Nam, ăn <b>tiểu long bao</b> (xiaolongbao) ngay tại chỗ.</li>
+        <li><span class="tag">Trưa</span>Khu nghệ thuật <b>Điền Tử Phường (Tianzifang)</b> hoặc lên đài quan sát <b>Tháp Thượng Hải</b> (cao nhất TQ). Chọn 1 trong 2 để có thời gian thoải mái.</li>
+        <li><span class="tag move">~14:30–15:00</span>Ra ga metro <b>Long Dương Lộ</b> (tuyến 2), đi <b>tàu đệm từ Maglev 7 phút tới sân bay Phố Đông (PVG)</b> — đạt 430 km/h, trải nghiệm thú vị cho ba mẹ! <span class="muted">(Hoặc taxi ~45 phút nếu có nhiều hành lý)</span></li>
+        <li><span class="tag move">~18:00–20:00</span>✈️ Bay thẳng <b>PVG → TP.HCM (SGN)</b> ~4h45. Hãng China Eastern (MU) / Vietnam Airlines (VN) / Vietjet (VJ).</li>
+        <li><span class="tag">~20:45–22:45</span>Hạ cánh <b>Tân Sơn Nhất</b>. Kết thúc hành trình. 🎉</li>
+      </ul>
+      <div class="box warn" style="margin-bottom:0">⏰ <b>Lưu ý giờ sân bay</b>: cần có mặt tại PVG trước <b>3 tiếng</b> so với giờ bay (bay 18:00 → cần ở PVG lúc 15:00). Tính ngược để biết ra khỏi trung tâm Thượng Hải lúc nào.</div>
+    </div>
+  </details>
+
+</div></section>
+
+<!-- VÉ MÁY BAY -->
+<section id="bay"><div class="wrap">
+  <h2>✈️ Phương án vé máy bay</h2>
+  <p class="lead">Mua vé <b>"open-jaw"</b>: vào Bắc Kinh (HAN→PEK/PKX) — ra Thượng Hải (PVG→SGN). Giá ước tính 1 chiều/người tháng 6/2026.</p>
+
+  <div class="grid">
+    <div class="card">
+      <span class="pill best">CHẶNG ĐI · Tối 19/6</span>
+      <h3>Hà Nội (HAN) → Bắc Kinh</h3>
+      <div class="price">~200–280 USD</div>
+      <div class="muted" style="font-size:14px">≈ 5,1–7,1 tr VNĐ/người · bay thẳng ~3h25</div>
+      <ul>
+        <li><b>Vietjet (VJ)</b> — rẻ nhất, từ ~199 USD</li>
+        <li><b>China Southern (CZ)</b> — ~272 USD, bay vào Đại Hưng <b>(PKX)</b></li>
+        <li><b>Vietnam Airlines (VN)</b> — ~330–380 USD, bay vào Thủ Đô <b>(PEK)</b></li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill best">CHẶNG VỀ · Tối 24/6</span>
+      <h3>Thượng Hải (PVG) → TP.HCM (SGN)</h3>
+      <div class="price">~130–210 USD</div>
+      <div class="muted" style="font-size:14px">≈ 3,3–5,3 tr VNĐ/người · bay thẳng ~4h45</div>
+      <ul>
+        <li><b>China Eastern (MU)</b> — nhiều chuyến, giá tốt</li>
+        <li><b>Juneyao (HO) / China Southern (CZ)</b> — cạnh tranh</li>
+        <li><b>Vietnam Airlines / Vietjet</b> — hãng VN, tiện ngôn ngữ</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill alt">NỘI ĐỊA · Ngày 19/6</span>
+      <h3>Vinh (VII) → Hà Nội (HAN)</h3>
+      <div class="price">~40–70 USD</div>
+      <div class="muted" style="font-size:14px">≈ 1–1,8 tr VNĐ/người · bay ~1h</div>
+      <ul>
+        <li>Thay cho đi xe 5–6h từ Nghệ An nếu muốn tiết kiệm thời gian</li>
+        <li>Nên dư ≥4h giữa chuyến nội địa và quốc tế</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box info">
+    <h3>📍 PEK hay PKX?</h3>
+    <p><b>Sân bay Thủ Đô (PEK)</b> — phía Đông Bắc, gần trung tâm hơn, nhiều tàu điện. <b>Sân bay Đại Hưng (PKX)</b> — phía Nam, mới hiện đại, China Southern thường bay vào đây. Khi đặt khách sạn &amp; tính giờ đưa đón, kiểm tra rõ sân bay.</p>
+  </div>
+</div></section>
+
+<!-- TÀU CAO TỐC -->
+<section id="tau"><div class="wrap">
+  <h2>🚄 Tàu điện nội địa Trung Quốc</h2>
+  <p class="lead">Đặt vé qua <b>Trip.com</b> (tiếng Anh/Việt, thanh toán thẻ quốc tế) hoặc <b>12306.cn</b> (chính chủ). Mang hộ chiếu để lấy vé tại máy &amp; qua cổng soát vé.</p>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Chặng &amp; ngày</th><th>Loại tàu</th><th>Thời gian</th><th class="num">Ghế hạng 2 / người</th><th>Ghi chú</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Bắc Kinh Nam → Thiên Tân</b><br><span class="muted">Sáng sớm 22/6 (Thứ Hai)</span></td>
+          <td>Liên vận C / G</td>
+          <td>~30–35 phút</td>
+          <td class="num">~55 CNY<br><span class="muted">≈ 195k VNĐ</span></td>
+          <td>Chạy từ ~06:00, tần suất 5–15 phút/chuyến. Gần như không cần đặt sớm.</td>
+        </tr>
+        <tr>
+          <td><b>Thiên Tân Nam → Thượng Hải Hồng Kiều</b><br><span class="muted">Sáng 23/6 (Thứ Ba)</span></td>
+          <td>Cao tốc G</td>
+          <td>~4–4,5h<br><span class="muted">(nhanh nhất ~4h03)</span></td>
+          <td class="num">~620–680 CNY<br><span class="muted">≈ 2,2–2,4 tr VNĐ</span></td>
+          <td>Chuyến sớm nhất ~06:27. Nên chọn chuyến ~07:30. <b>Đặt sớm 1–2 tuần.</b></td>
+        </tr>
+        <tr>
+          <td><b>Thượng Hải: Maglev → Sân bay PVG</b><br><span class="muted">Chiều 24/6 (tùy chọn)</span></td>
+          <td>Tàu đệm từ Maglev</td>
+          <td>~7 phút<br><span class="muted">(430 km/h)</span></td>
+          <td class="num">~50 CNY<br><span class="muted">≈ 178k VNĐ</span></td>
+          <td>Từ ga Long Dương Lộ (tuyến 2 metro). Trải nghiệm thú vị, không cần đặt trước.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box warn">
+    <h3>🚗 Ngày 22/6 — thuê xe riêng, không đi tàu</h3>
+    <p>Nhà máy Yilink (Tân Nam) → Hoàng Nhai Quan (huyện Kế) cách ~150 km, không có phương tiện công cộng thuận tiện. Thuê <b>xe 5–7 chỗ có tài xế trọn ngày</b> (~1.200–1.800 CNY) là giải pháp tối ưu: chở hành lý từ Bắc Kinh, linh hoạt giờ giấc, đưa về kịp tiệc tối 19:00.</p>
+  </div>
+
+  <div class="box ok" style="margin-bottom:0">
+    <h3>🎫 Mẹo đặt vé tàu</h3>
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li>Vé G Thiên Tân–Thượng Hải mở bán <b>trước 15 ngày</b> — đặt ngay khi lịch chốt</li>
+      <li>Đến ga trước <b>40–60 phút</b> (cần qua an ninh + soát hộ chiếu)</li>
+      <li>Ghế hạng 2 rộng rãi, thoải mái cho chặng 4h; hạng 1 đắt gấp ~1,6 lần</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- YILINK & TRƯỜNG THÀNH -->
+<section id="yilink"><div class="wrap">
+  <h2>🏭 Nhà máy Yilink &amp; Trường Thành Hoàng Nhai Quan</h2>
+
+  <div class="grid">
+    <div class="card" style="border-left:4px solid var(--red)">
+      <h3>Yilink (Tianjin) Biotechnology Co., Ltd</h3>
+      <ul>
+        <li><b>Lĩnh vực:</b> máy phay CAD/CAM nha khoa, vật liệu zirconia, thiết bị labo</li>
+        <li><b>Trụ sở:</b> Số 9 đường Kaituo, thị trấn Balitai, Quận Tân Nam (Jinnan), Thiên Tân</li>
+        <li><b>Xưởng sản xuất:</b> Tòa 57, R&amp;D Park, số 1 đường Ruike, KCN Shuanggang, Quận Tân Nam, Thiên Tân</li>
+        <li><b>Website:</b> <a href="https://www.yilink-dental.com/" target="_blank" rel="noopener">yilink-dental.com</a></li>
+        <li class="muted">Lưu ý: còn có cơ sở ở Quảng Châu &amp; Giang Tây — xác nhận với Mr. Andy đúng địa chỉ cần đến.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-left:4px solid #15803d">
+      <h3>🧱 Trường Thành Hoàng Nhai Quan (Huangyaguan)</h3>
+      <ul>
+        <li>Đoạn Trường Thành <b>duy nhất trong địa phận Thiên Tân</b> — huyện Kế (Jizhou), cách trung tâm TN ~2h xe</li>
+        <li>Dài ~3,3 km, có cổng quan ải cổ &amp; "bát quái trận" độc đáo, ít đông, cảnh núi đẹp</li>
+        <li>Vé vào ~65 CNY/người; tham quan thoải mái ~2h</li>
+        <li>Mặc giày thể thao, mang nước và mũ (nắng tháng 6)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box ok">
+    <h3>✅ Chuẩn bị buổi làm việc &amp; tiệc tối (22/6)</h3>
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li>Liên hệ trước xác nhận lịch hẹn nhà máy <b>sáng Thứ Hai 22/6, ~08:00–10:30</b></li>
+      <li>Mang <b>danh thiếp, hồ sơ sản phẩm</b>, chuẩn bị nội dung trao đổi; cân nhắc thuê phiên dịch Trung–Việt</li>
+      <li>Chuẩn bị <b>quà nhỏ đặc sản Việt Nam</b> tặng đối tác cho buổi tiệc tối</li>
+      <li>Nếu mục tiêu ký kết/đào tạo dài hạn → xem xét xin <b>visa M (thương mại)</b> thay vì L</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- VISA -->
+<section id="visa"><div class="wrap">
+  <h2>🛂 Visa Trung Quốc (loại L – du lịch)</h2>
+  <p class="lead">Công dân Việt Nam <b>bắt buộc xin visa</b>. Miễn visa quá cảnh 240h <b>không áp dụng</b> vì hành trình bay từ Việt Nam vào Trung Quốc rồi lại về Việt Nam (không qua nước thứ ba).</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>📋 Hồ sơ cần chuẩn bị</h3>
+      <ul class="check">
+        <li><b>Hộ chiếu</b> còn hạn ≥ 6 tháng, ≥ 2 trang trắng + bản photo trang thông tin</li>
+        <li><b>Tờ khai visa</b> điền online hệ thống COVA, in ra &amp; ký tên</li>
+        <li><b>Ảnh 33×48 mm</b> nền trắng, chụp gần đây</li>
+        <li><b>Vé máy bay</b> đặt giữ chỗ (HAN→BJ và PVG→SGN)</li>
+        <li><b>Xác nhận đặt phòng khách sạn</b> toàn bộ hành trình</li>
+        <li><b>Lịch trình chi tiết</b> (trang web này dùng được)</li>
+        <li><b>Sao kê ngân hàng</b> 3–6 tháng</li>
+        <li>Ba mẹ nghỉ hưu: <b>sổ hưu</b> hoặc giấy bảo lãnh của con</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>💵 Lệ phí &amp; nơi nộp (Hà Nội)</h3>
+      <ul>
+        <li><b>Lệ phí lãnh sự:</b> ~30 USD (1 lần) / 45 USD (2 lần) / 60–90 USD (nhiều lần)</li>
+        <li><b>Phí CVASC:</b> Thường (15 ngày làm việc) ~690k đ · Nhanh (3 ngày) ~1,04tr đ</li>
+        <li><b>Địa điểm:</b> Tầng 7, Trang An Complex, số 1 Phùng Chí Kiên, Nghĩa Tân, Cầu Giấy, Hà Nội</li>
+        <li><b>Lăn vân tay:</b> bắt buộc nộp trực tiếp</li>
+        <li><b>Phí không hoàn lại</b> kể cả khi từ chối</li>
+      </ul>
+      <div class="box warn" style="margin-top:10px;margin-bottom:0;padding:12px 14px">
+        ⏰ Nộp hồ sơ <b>trước cuối tháng 5/2026</b> (≥3–4 tuần trước ngày bay 19/6).
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CHI PHÍ -->
+<section id="chiphi"><div class="wrap">
+  <h2>💰 Bảng chi phí ước tính (3 người)</h2>
+  <p class="lead">Mức trung cấp (khách sạn 3–4★, ghế tàu hạng 2, ăn uống thoải mái). Tỷ giá tham khảo: <b>1 USD ≈ 25.400đ · 1 CNY ≈ 3.560đ</b>.</p>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Hạng mục</th><th>Chi tiết</th><th class="num">Tổng 3 người (VNĐ)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Visa Trung Quốc (L, tự nộp)</td><td>~1,45 tr/người (lệ phí + phí dịch vụ)</td><td class="num">~4.350.000</td></tr>
+        <tr><td>Nghệ An → Hà Nội</td><td>Xe limousine hoặc bay nội địa × 3</td><td class="num">~2.200.000</td></tr>
+        <tr><td>Bay HAN → Bắc Kinh</td><td>~245 USD/người × 3 (1 chiều, tối 19/6)</td><td class="num">~18.700.000</td></tr>
+        <tr><td>Bay Thượng Hải → TP.HCM</td><td>~180 USD/người × 3 (1 chiều, tối 24/6)</td><td class="num">~13.700.000</td></tr>
+        <tr><td>Tàu Bắc Kinh Nam → Thiên Tân</td><td>1 chiều, sáng 22/6 × 3</td><td class="num">~600.000</td></tr>
+        <tr><td>Tàu Thiên Tân Nam → Thượng Hải</td><td>~650 CNY/người × 3, ngày 23/6</td><td class="num">~6.900.000</td></tr>
+        <tr><td>Xe riêng trọn ngày 22/6 (Thiên Tân)</td><td>Nhà máy + Hoàng Nhai Quan + tiệc tối + vé cổng</td><td class="num">~6.500.000</td></tr>
+        <tr><td>Khách sạn (5 đêm)</td><td>Bắc Kinh 3 đêm + Thiên Tân 1 + Thượng Hải 1 (~700–800 CNY/đêm)</td><td class="num">~13.200.000</td></tr>
+        <tr><td>Ăn uống (6 ngày)</td><td>~150 CNY/người/ngày × 3 × 6</td><td class="num">~9.600.000</td></tr>
+        <tr><td>Vé tham quan</td><td>Tử Cấm Thành, Thiên Đàn, Di Hòa Viên, Thượng Hải…</td><td class="num">~3.500.000</td></tr>
+        <tr><td>Đi lại nội thành + đưa đón sân bay</td><td>Metro/Didi/taxi 3 thành phố</td><td class="num">~3.500.000</td></tr>
+        <tr><td>Bảo hiểm du lịch</td><td>~20 USD/người × 3</td><td class="num">~1.500.000</td></tr>
+        <tr><td>eSIM/4G, phát sinh</td><td>SIM data + chi tiêu lặt vặt</td><td class="num">~1.500.000</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td colspan="2">Tạm tính</td><td class="num">~85.750.000</td></tr>
+        <tr><td colspan="2">Tổng + 10% dự phòng</td><td class="num">~94.000.000</td></tr>
+        <tr><td colspan="2">Mỗi người</td><td class="num">~31.300.000</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="box ok" style="margin-bottom:0">
+    <h3>🔻 Mẹo tiết kiệm</h3>
+    <ul style="margin:.4em 0 0;padding-left:18px">
+      <li>Đặt vé máy bay &amp; khách sạn <b>sớm 2–3 tháng</b> — giá tháng 6 thường rẻ (mùa thấp điểm TQ)</li>
+      <li>Dùng <b>Alipay/WeChat Pay</b> liên kết Visa/Mastercard; mang thêm ~300–500 CNY tiền mặt dự phòng</li>
+      <li>3 người: đặt <b>1 phòng triple/gia đình</b> thay 2 phòng đôi để tiết kiệm khách sạn</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- LƯU Ý & MẸO -->
+<section id="meo"><div class="wrap">
+  <h2>📝 Lưu ý &amp; mẹo thực tế</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>💳 Thanh toán &amp; Internet</h3>
+      <ul>
+        <li>Cài <b>Alipay</b> hoặc <b>WeChat Pay</b> trước khi đi, liên kết thẻ Visa/Mastercard — hầu hết nơi ở TQ thanh toán qua QR, ít nhận tiền mặt</li>
+        <li>TQ chặn Google/Facebook/Zalo → mua <b>eSIM quốc tế</b> có sẵn VPN hoặc gói roaming data trước</li>
+        <li>Mang ~300–500 CNY tiền mặt dự phòng cho quán nhỏ, xe buýt</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🌤️ Thời tiết tháng 6</h3>
+      <ul>
+        <li><b>Bắc Kinh &amp; Thiên Tân:</b> nóng &amp; khô, 24–33°C — mũ, kem chống nắng, nước</li>
+        <li><b>Ngày 22 leo Trường Thành:</b> nắng gắt trên đỉnh — áo nhẹ thoáng, giày thể thao bắt buộc</li>
+        <li><b>Thượng Hải:</b> nóng ẩm, có thể mưa (mùa mai vũ) — mang ô nhỏ</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📱 Ứng dụng cần cài</h3>
+      <ul>
+        <li><b>Trip.com / 12306</b> — đặt vé tàu &amp; khách sạn</li>
+        <li><b>Amap (高德地图) / Apple Maps</b> — chỉ đường (Google Maps không chính xác ở TQ)</li>
+        <li><b>Didi</b> — gọi xe; <b>Google Dịch</b> — dịch qua camera tiện khi đọc menu/biển</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>👵 Đi cùng ba mẹ</h3>
+      <ul>
+        <li><b>Ngày 22 là ngày dài nhất</b> — xe riêng, nghỉ trưa đủ trước khi leo Trường Thành; mang thuốc đau chân/cảm</li>
+        <li>Tử Cấm Thành &amp; Thiên Đàn có đường phẳng, hợp người lớn tuổi; Hoàng Nhai Quan có đoạn dốc nhẹ</li>
+        <li>Mang theo đơn thuốc (tiếng Anh) và thuốc thường dùng từ Việt Nam</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b>Tour Trung Quốc 19–24/06/2026</b> · Lịch trình tham khảo cho gia đình 3 người. Giá cả &amp; lịch tàu/bay có thể thay đổi — kiểm tra lại khi đặt.</div>
+  <div class="src">Nguồn: TravelChinaGuide · ChinaDiscovery · ChinaHighlights (tàu cao tốc, Hoàng Nhai Quan) · Skyscanner · Kiwi.com · Expedia (vé máy bay) · yilink-dental.com · CVASC Hà Nội (visa). Tỷ giá ước tính 05/2026.</div>
+  <div style="margin-top:12px;text-align:center;color:#8b93a1;font-size:12.5px">Tạo bằng Claude Code · Cập nhật: 24/05/2026</div>
+</div></footer>
+
+</body>
+</html>
